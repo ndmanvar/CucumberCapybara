@@ -7,3 +7,10 @@ Sauce.config do |c|
   c[:version] = 21
   c[:os] = "Windows"
 end
+
+
+Around('@selenium') do |scenario, block|
+  JenkinsSauce.output_jenkins_log(scenario)
+  block.call
+  ::Capybara.current_session.driver.quit
+end
