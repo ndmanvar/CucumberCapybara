@@ -10,7 +10,7 @@ Sauce.config do |c|
 end
 
 
-After do |scenario, block|
+Around('@selenium') do |scenario, block|
   JenkinsSauce.output_jenkins_log(scenario)
   block.call
   ::Capybara.current_session.driver.quit
