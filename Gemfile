@@ -1,6 +1,6 @@
 source "https://www.rubygems.org"
 
-gem 'cucumber'
+gem 'cucumber', '1.3.19'
 gem 'rspec'
 gem 'capybara', '~> 2.0.3'
 gem 'sauce'
