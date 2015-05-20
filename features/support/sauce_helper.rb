@@ -1,8 +1,3 @@
-require 'capybara/cucumber'
-require 'sauce/cucumber'
-require 'sauce'
-
-
 Sauce.config do |config|
   config[:browsers] = [
     ["Windows 7","Chrome", "41"],
@@ -13,11 +8,4 @@ Sauce.config do |config|
     ["Windows XP","Internet Explorer", "8"],
     ["OS X 10.10", "Chrome", "41"]
   ]
-end
-
-
-Around('@selenium') do |scenario, block|
-  JenkinsSauce.output_jenkins_log(scenario)
-  block.call
-  ::Capybara.current_session.driver.quit
 end
