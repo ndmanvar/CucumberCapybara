@@ -1,5 +1,6 @@
 require 'capybara/cucumber'
 require 'sauce/cucumber'
+require 'sauce'
 
 Sauce.config do |c|
   c[:start_tunnel] = false
