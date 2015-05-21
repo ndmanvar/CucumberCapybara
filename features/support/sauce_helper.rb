@@ -1,3 +1,8 @@
+require 'capybara/cucumber'
+require 'sauce/cucumber'
+require 'sauce'
+require 'cucumber'
+
 Sauce.config do |config|
   config[:browsers] = [
     ["Windows 7","Chrome", "41"],
