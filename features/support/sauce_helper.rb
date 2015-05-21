@@ -1,5 +1,3 @@
-require 'capybara/cucumber'
-require 'sauce/cucumber'
 require 'sauce'
 require 'cucumber'
 
