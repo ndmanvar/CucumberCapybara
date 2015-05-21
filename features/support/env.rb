@@ -10,11 +10,16 @@ Sauce.config do |c|
 end
 
 After do |scenario|
-	puts "in after..!"
+  puts "in after..!"
 end
 
 at_exit do
-  puts 'in at exit..!'
+  Dir.glob('*.xml') do |file|
+  	if file.include?('TEST-')
+  		newFileName = "#{Time.now.to_i}_#{rand(1000)}_#{file.gsub('TEST', '')}"
+  		File.rename(file, newFileName)
+  	end
+  end
 end
 
 
