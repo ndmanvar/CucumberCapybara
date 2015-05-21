@@ -9,3 +9,8 @@ Sauce.config do |config|
     ["OS X 10.10", "Chrome", "41"]
   ]
 end
+
+
+After do |scenario|
+	puts "in after..!"
+end
