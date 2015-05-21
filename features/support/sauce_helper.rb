@@ -1,6 +1,3 @@
-require 'sauce'
-require 'cucumber'
-
 Sauce.config do |config|
   config[:browsers] = [
     ["Windows 7","Chrome", "41"],
@@ -11,9 +8,4 @@ Sauce.config do |config|
     ["Windows XP","Internet Explorer", "8"],
     ["OS X 10.10", "Chrome", "41"]
   ]
-end
-
-
-After do |scenario|
-	puts "in after..!"
 end
