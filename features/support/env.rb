@@ -13,6 +13,10 @@ After do |scenario|
 	puts "in after..!"
 end
 
+at_exit do
+  puts 'in at exit..!'
+end
+
 
 # Around('@selenium') do |scenario, block|
 #   JenkinsSauce.output_jenkins_log(scenario)
