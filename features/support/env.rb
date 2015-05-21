@@ -9,6 +9,10 @@ Sauce.config do |c|
   c[:os] = "Windows"
 end
 
+After do |scenario|
+	puts "in after..!"
+end
+
 
 # Around('@selenium') do |scenario, block|
 #   JenkinsSauce.output_jenkins_log(scenario)
