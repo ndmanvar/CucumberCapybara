@@ -10,10 +10,9 @@ Sauce.config do |c|
 end
 
 def getUniqueFileName(file)
-	i = 0
-	while File.exists?(file)
+	i = 1
+	while File.exists?(fileName = file.gsub('TEST', i.to_s))
 		i = i + 1
-		fileName = file.gsub('TEST', i.to_s)
 	end
 	fileName
 end
