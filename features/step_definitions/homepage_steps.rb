@@ -3,7 +3,6 @@ Given /^I am on beachbody homepage$/ do
 end
 
 Then 'I should see the slideshow' do
-  sleep 5
   page.find(:css, '#contentHome .jslideshow').visible?.should == true
 end
 
@@ -12,7 +11,6 @@ Then 'I should see the toolbar header' do
 end
 
 And /^I click the "(.*)" link in the left rail$/ do | linkType |
-  sleep 5 # need to replace with "dynamic" wait
   selector = "ul.sbmenu li a[href*='#{linkType.gsub(' ', '-').downcase}']"
   page.find(:css, selector).click
 end

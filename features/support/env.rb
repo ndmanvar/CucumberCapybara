@@ -9,6 +9,8 @@ Sauce.config do |c|
   c[:os] = "Windows"
 end
 
+Capybara.default_wait_time = 30
+
 def getUniqueFileName(file)
 	i = 1
 	while File.exists?(fileName = file.gsub('TEST', i.to_s))
