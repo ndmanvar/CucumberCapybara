@@ -9,15 +9,19 @@ Sauce.config do |c|
   c[:os] = "Windows"
 end
 
-After do |scenario|
-  puts "in after..!"
+def getUniqueFileName(file)
+	i = 0
+	while File.exists?(file)
+		i = i + 1
+		fileName = file.gsub('TEST', i.to_s)
+	end
+	fileName
 end
 
 at_exit do
   Dir.glob('*.xml') do |file|
   	if file.include?('TEST-')
-  		newFileName = "#{Time.now.to_i}_#{rand(1000)}_#{file.gsub('TEST', '')}"
-  		File.rename(file, newFileName)
+  		File.rename(file, getUniqueFileName(file))
   	end
   end
 end
