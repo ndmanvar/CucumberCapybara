@@ -1,23 +1,16 @@
-Then 'I should see the homepage slideshow' do
-    page.find(:id, 'hero').visible?.should == true
+Given 'I am on the priceline homepage' do
+  visit "http://www.priceline.com"
 end
 
-Then 'I should see the toolbar on top' do
-    page.find(:css, '.primary').visible?.should == true
+Then /^I should see a tab entry for "(.*)"$/ do | section |
+  page.find(:xpath, "//*[contains(@id, 'tab-')][contains(text(), '#{section}')]").visible?.should == true
 end
 
-Then 'I should see Pacific Dental Services logo' do
-    page.find(:css, 'img.logo').visible?.should == true
+Then /^I should see the "(.*)" form$/ do | section |
+  page.find(:id, "#{section.downcase}-form").visible?.should == true
 end
 
-Then 'I should see the article content' do
-    page.find(:css, '.content').visible?.should == true
+Then 'I should see the Express Deals section' do
+  page.find(:css, '.xdeals-container').visible?.should == true
 end
 
-Then 'I should see the career oppurtunities in the sidebar' do
-    page.find(:css, '.menu-sidebar').visible?.should == true
-end
-
-Then 'I should see the map in the sidebar' do
-    page.find(:css, '.map').visible?.should == true
-end

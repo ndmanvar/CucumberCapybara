@@ -1,11 +1,15 @@
 @selenium
-Feature: Pacific Dental Servicies
+Feature: Priceline homepage
 
-Scenario: Verify Dentist career oppurtunities
-  Given I am on the Pacific Dental Services homepage
-  Then I should see the homepage slideshow
-	Then I should see the toolbar on top
-	Then I should see Pacific Dental Services logo
-	Then I should see the article content
-	Then I should see the career oppurtunities in the sidebar
-	Then I should see the map in the sidebar
+  Scenario: Verify Draft City Homepage UI
+    Given I am on the priceline homepage
+
+    Then I should see a tab entry for "Hotels"
+    Then I should see a tab entry for "Flights"
+    Then I should see a tab entry for "Cars"
+    Then I should see a tab entry for "Vacation Packages"
+    Then I should see a tab entry for "Cruises"
+
+    Then I should see the "Hotels" form
+
+    Then I should see the Express Deals section
