@@ -1,22 +1,23 @@
-Given /^I am on beachbody homepage$/ do
-  visit "http://www.beachbody.com"
+Then 'I should see the homepage slideshow' do
+    page.find(:id, 'hero').visible?.should == true
 end
 
-Then 'I should see the slideshow' do
-  page.find(:css, '#contentHome .jslideshow').visible?.should == true
+Then 'I should see the toolbar on top' do
+    page.find(:css, '.primary').visible?.should == true
 end
 
-Then 'I should see the toolbar header' do
-  page.find(:css, '#header').visible?.should == true
+Then 'I should see Pacific Dental Services logo' do
+    page.find(:css, 'img.logo').visible?.should == true
 end
 
-And /^I click the "(.*)" link in the left rail$/ do | linkType |
-  selector = "ul.sbmenu li a[href*='#{linkType.gsub(' ', '-').downcase}']"
-  page.find(:css, selector).click
+Then 'I should see the article content' do
+    page.find(:css, '.content').visible?.should == true
 end
 
-Then /^I should be on the "(.*)" page$/ do | linkType |
-  current_url.include?("#{linkType.gsub(' ', '-').downcase}").should == true
+Then 'I should see the career oppurtunities in the sidebar' do
+    page.find(:css, '.menu-sidebar').visible?.should == true
+end
 
-  # TODO: verify elements are present on page
+Then 'I should see the map in the sidebar' do
+    page.find(:css, '.map').visible?.should == true
 end

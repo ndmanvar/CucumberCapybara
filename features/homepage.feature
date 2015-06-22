@@ -1,7 +1,11 @@
 @selenium
-Feature: BeachBody homepage
+Feature: Pacific Dental Servicies
 
-  Scenario: Verify homepage loads properly
-    Given I am on beachbody homepage
-    Then I should see the slideshow
-    Then I should see the toolbar header
+Scenario: Verify Dentist career oppurtunities
+  Given I am on the Pacific Dental Services homepage
+  Then I should see the homepage slideshow
+	Then I should see the toolbar on top
+	Then I should see Pacific Dental Services logo
+	Then I should see the article content
+	Then I should see the career oppurtunities in the sidebar
+	Then I should see the map in the sidebar
