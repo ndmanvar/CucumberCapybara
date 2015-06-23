@@ -12,14 +12,12 @@ Dir[File.join(features_folder, '**', '*.feature')].keep_if do | file, value |
   content = File.read file
 
   # require 'debugger'; debugger;
-  split_arr  = content.split(/(\s*Scenario:.*)|(\s*Scenario Outline:.*)/)
-
+  split_arr  = content.split(/([@a-zA-Z]*\n[ \t]*Scenario.*:.*)/)
 
   scenario_name_line_num = 1
   total_lines_num = split_arr.size
 
   feature_text = split_arr[0]
-
 
   new_file_number = 1
   while scenario_name_line_num < total_lines_num  do
@@ -27,7 +25,6 @@ Dir[File.join(features_folder, '**', '*.feature')].keep_if do | file, value |
       scenario = split_arr[scenario_name_line_num + 1]
 
       newFile = File.join(destination_folder, file.gsub("#{features_folder}/", ""))
-      puts "tot is : #{total_lines_num}"
       newFile = newFile.gsub(".feature", "_#{new_file_number}.feature") if total_lines_num > 3
 
       dirname = File.dirname(newFile)
