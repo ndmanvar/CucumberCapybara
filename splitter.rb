@@ -12,7 +12,7 @@ Dir[File.join(features_folder, '**', '*.feature')].keep_if do | file, value |
   content = File.read file
 
   # require 'debugger'; debugger;
-  split_arr  = content.split(/([@a-zA-Z]*\n[ \t]*Scenario.*:.*)/)
+  split_arr  = content.split(/((?:[\s]*@.*)?[\n ]*Scenario.*)/)
 
   scenario_name_line_num = 1
   total_lines_num = split_arr.size
@@ -36,6 +36,7 @@ Dir[File.join(features_folder, '**', '*.feature')].keep_if do | file, value |
 
       File.open(newFile, 'w') { |f|
       	f.puts feature_text + scenario_name + scenario
+         # + "\n" + scenario_name + scenario
       }
 
       new_file_number += 1
