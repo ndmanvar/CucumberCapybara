@@ -46,3 +46,5 @@ Dir[File.join(features_folder, '**', '*.feature')].keep_if do | file, value |
     end
 
   end
+
+# TO DO: Write logic to carry over tags and background
