@@ -1,9 +1,7 @@
-puts "here"
+require 'fileutils'
 
 features_folder = ARGV[0]
 destination_folder = ARGV[1]
-
-require 'fileutils'
 
 files = []
 
