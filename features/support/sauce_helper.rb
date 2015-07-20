@@ -5,7 +5,7 @@ Sauce.config do |config|
     ["Windows 7","Internet Explorer", "10"],
     ["Windows XP","Chrome", "41"],
     ["Windows XP","Firefox", "32"],
-    ["Windows XP","Internet Explorer", "8"],
+    ["Windows 7","Internet Explorer", "9"],
     ["OS X 10.10", "Chrome", "41"]
   ]
 end
