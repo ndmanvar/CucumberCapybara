@@ -1,5 +1,5 @@
 Given /^I am on one login homepage$/ do
-  visit "http://www.onelogin.com"
+  visit "https://www.onelogin.com"
 end
 
 Then 'I should see the slideshow' do
