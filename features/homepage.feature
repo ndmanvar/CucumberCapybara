@@ -1,7 +1,6 @@
 @selenium
-Feature: BeachBody homepage
+Feature: Github homepage
 
-  Scenario: Verify homepage loads properly
-    Given I am on beachbody homepage
-    Then I should see the slideshow
-    Then I should see the toolbar header
+  Scenario: Github homepage loads properly
+    Given I am on github homepage
+    Then the title of the page should be "GitHub · Build software better, together."
