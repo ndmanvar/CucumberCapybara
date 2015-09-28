@@ -1,4 +1,5 @@
 Sauce.config do |config|
+  config[:start_tunnel] = false
   config[:browsers] = [
     ["Windows 7","Chrome", "41"],
     ["Windows 7","Firefox", "32"],
